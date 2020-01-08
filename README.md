@@ -5,10 +5,10 @@
 
 
 ## DONE
---  postavke projekta netbeans (public folder)  postavka netbinsa konfigurirati code analisys exclude direktorije
---  postavke projekta netbeans (public folder)
---  konfigurirati .env
---  postavka mysql
+- postavke projekta netbeans (public folder)  postavka netbinsa konfigurirati code analisys exclude direktorije
+- postavke projekta netbeans (public folder)
+- konfigurirati .env
+- postavka mysql
 
 
 
