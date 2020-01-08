@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Algebra Online PHP 2020
                 </div>
 
                 <div class="links">
