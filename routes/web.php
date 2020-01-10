@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/btest', function () {
+  //  return view('testbootstrap');  // Vraćeno pomoću helpera
+   return View::make('testbootstrap', ['name' => 'Taylor']);   // radi sa Fascade statickim pristupom
+    
+});
+Route::get('foo',function(){
+    //echo "Hello world";  // Može i ovako
+    return "Hello world";
+});
+//TODO isprobaj sa post formom
+Route::match(['get', 'post'], '/radiigetipost', function () {
+    return "ovo je pozvano ili sa get ili sa post";
+});
+// Ako rute imaju isto ime i metodu zadnja ruta će pregaziti prethodnu
+Route::any('/radiigetipost', function () {
+    return "ovo je pozvano sa bilo kojom rutom";
+});
+Route::redirect('/here', '/there', 500);
