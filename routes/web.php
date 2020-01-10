@@ -32,3 +32,14 @@ Route::any('/radiigetipost', function () {
     return "ovo je pozvano sa bilo kojom rutom";
 });
 Route::redirect('/here', '/there', 500);
+
+// Rute sa parametrima
+Route::get('user/{id}', function ($id) {
+    return 'User '.$id;
+});
+Route::get('kvadriraj/{broj}', function ($broj) {
+    return 'Kvadrat od '.$broj." je ".($broj*$broj);
+});
+Route::get('xcoord/{varx}/ycoord/{vary}', function ($x, $y) {
+    return view('gchart',['x'=>$x,'y'=>$y]);
+});
