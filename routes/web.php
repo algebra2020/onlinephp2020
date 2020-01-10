@@ -43,3 +43,11 @@ Route::get('kvadriraj/{broj}', function ($broj) {
 Route::get('xcoord/{varx}/ycoord/{vary}', function ($x, $y) {
     return view('gchart',['x'=>$x,'y'=>$y]);
 });
+
+Route::get('users/{name}', function ($name) {
+    echo "pozdrav ".$name;
+})->where('name', '[A-Za-z]+')-> name('whatsmyname');
+
+Route::get('users/{id}', function ($id) {
+    echo "pozdrav nepoznati, tvoj id je".$id;
+})->where('id', '[0-9]+')-> name('whatsmyid');

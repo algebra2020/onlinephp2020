@@ -24,6 +24,7 @@ and open the template in the editor.
         ?></h1>
     <p>I know your name is {{$name}}</p>
   <p><a href="http://localhost:8000/btest">Call this page</a></p>
+    <p><a href="{{route('whatsmyname', ['name' => 'Markonii'])}}">Call user koji se zove Markonii</a></p>
 </div>
        
         
