@@ -30,7 +30,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+       // kad god se u route adresi pojavi varijabla 'id' ona mora biti broj
+        Route::pattern('id', '[0-9]+');
 
         parent::boot();
     }
