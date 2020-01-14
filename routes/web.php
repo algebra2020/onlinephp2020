@@ -55,3 +55,5 @@ Route::middleware('over18')->get('over18/{age}',function($age){
     return "Dobrodošli, vi ste stariji od 18, imate ".$age;
 }
 )->name('over18');
+
+Route::resource('photos', 'PhotoController');
