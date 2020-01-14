@@ -34,9 +34,8 @@ Route::any('/radiigetipost', function () {
 Route::redirect('/here', '/there', 500);
 
 // Rute sa parametrima
-Route::get('user/{id}', function ($id) {
-    return 'User '.$id;
-});
+Route::get('user/{id}','UserController@show');
+
 Route::get('kvadriraj/{broj}', function ($broj) {
     return 'Kvadrat od '.$broj." je ".($broj*$broj);
 });

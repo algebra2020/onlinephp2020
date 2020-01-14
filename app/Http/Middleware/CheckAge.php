@@ -19,7 +19,7 @@ class CheckAge
         //TODO
         //http://localhost:8000/over18/22  --> treba dozvoliti
         // http://localhost:8000/over18/13 --> treba redirectati na home
-         if ($request->age <= 17) {
+         if ($request->age<= 17) {
             return redirect()->route('home');
         }
         return $next($request);
