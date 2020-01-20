@@ -63,6 +63,8 @@ Route::resource('photos', 'PhotoController');
 // Use on your routes.
 Route::get('/basicauth', ['middleware' => 'shield'], function () {
     // Your protected page.
+    // $ php -r "echo password_hash('vinkla', PASSWORD_DEFAULT);"
+    // $2y$10$TPls.F4rHMWV53EYOT0DEuHwL6OYf5R/2u.MjMopmGcHJR7Hrr9JG
     // upisi username i hashirani pass
     return "logirani ste";
 });
