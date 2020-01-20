@@ -57,3 +57,12 @@ Route::middleware('over18')->get('over18/{age}',function($age){
 )->name('over18');
 
 Route::resource('photos', 'PhotoController');
+
+// basic auth primjer
+// https://github.com/vinkla/laravel-shield
+// Use on your routes.
+Route::get('/basicauth', ['middleware' => 'shield'], function () {
+    // Your protected page.
+    // upisi username i hashirani pass
+    return "logirani ste";
+});
