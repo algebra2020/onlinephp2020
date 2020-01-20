@@ -1,0 +1,120 @@
+export PATH=${PATH}:/c/xampp/mysql/bin
+mysql
+mysql -u root
+mysql -u root -p
+./mysql -u root
+which mysql
+mysql -u root
+./mysql -u root
+cd Code/phpdev2020/
+git add .
+git commit -am "baza fakultet"
+git push
+git status
+git add .
+git commit -am "vjezbe strana 72"
+git push
+pwd
+ls -la
+ls -la
+cd Code/phpdev2020/
+ls -la
+chmod 777 ./hello.php
+ls -la
+chmod +w ./hello.php
+ls -la
+git add .
+git commit -am "php forme"
+git push
+cd Code/phpdev2020/
+git add .
+git commit -am "sessioni"
+git push
+git add .
+git commit -am "cookie"
+git add .
+git commit -am "mysqli spoj"
+git push
+cd Code
+rm -rf ./phuml/
+ls
+cd phpdev2020/
+git add .
+git commit -am "dinamička php mysql tablica"
+git push
+git add .
+git commit -am "tatjana zadaca 3.10 mysql strana 52"
+git push
+git add .
+git commit -am "greška kod pripremljenih upita DZ nadji grešku"
+git push
+composer
+cd ~
+pwd
+cd Code/
+ls
+php -i
+clear
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+unlink composer-setup.php
+composer -V
+composer create-project --prefer-dist laravel/laravel onlinephp2019
+git clone https://github.com/algebra2020/onlinephp2020.git
+ls
+cd onlinephp2020/
+ls
+git add .
+git commit -am "Laravel init"
+git push
+git add .
+git commit -am "ignoran kompletan nbproject dir"
+git push
+git commit -am "postavke .env, mysql, netbeans projekt, code coverage"
+git push
+git commit -am "postavke .env, mysql, netbeans projekt, code coverage"
+git push
+php artisan route:list
+php artisan key:generate
+php artisan down
+php artisan up
+git add .
+git commit -am "postavke routa"
+git push
+cd Code/onlinephp2020/
+php artisan
+php artisan -V
+php artisan tinker
+php artisan config:cache
+php artisan route:cache
+php artisan route:list
+php artisan route:clear
+git add .
+git status
+git commit -am "dodan novi view"
+php artisan tinker
+php artisan route:list
+git commit -am "google chart sa parametriziranim rutama"
+git add .
+git commit -am "google chart sa parametriziranim rutama"
+php artisan route:list --name what
+php artisan route:list --path use
+git add .
+git commit -am "dinamički link sa imenovanim rutama"
+git push
+pwd
+cd Code/onlinephp2020/
+php artisan make:middleware CheckAge
+php artisan cache:clear
+php artisan route:list
+git add .
+git commit -am "primjer middleware route"
+php artisan make:controller UserController
+git add .
+git commit -am "primjer controller show user na profil"
+php artisan make:controller PhotoController --resource
+php artisan make:controller PhotoController --resource --model=Photo
+php artisan cache:clear
+git add .
+git commit -am "primjer controller prikaz slike"
+git push
+

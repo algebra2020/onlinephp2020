@@ -50,7 +50,7 @@ Route::get('users/{name}', function ($name) {
 Route::get('users/{id}', function ($id) {
     echo "pozdrav nepoznati, tvoj id je".$id;
 })->where('id', '[0-9]+')-> name('whatsmyid');
-
+//  php artisan make:middleware CheckAge
 Route::middleware('over18')->get('over18/{age}',function($age){
     return "Dobrodošli, vi ste stariji od 18, imate ".$age;
 }

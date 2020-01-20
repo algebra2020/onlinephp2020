@@ -1,5 +1,5 @@
 <?php
-
+// php artisan make:controller PhotoController --resource --model=Photo
 namespace App\Http\Controllers;
 
 use App\Photo;
@@ -14,7 +14,7 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        //TODO Napravi galeriju
     }
 
     /**
@@ -24,7 +24,7 @@ class PhotoController extends Controller
      */
     public function create()
     {
-        //
+        //TODO napravi formu za unos fotografija
     }
 
     /**
@@ -35,7 +35,7 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //TODO napravi upload fotografije i spremi ime fotografije u bazu
     }
 
     /**
@@ -57,7 +57,7 @@ class PhotoController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        //TODO promijeni ime fotografije (samo forma)
     }
 
     /**
@@ -69,7 +69,7 @@ class PhotoController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        //
+        //TODO promjeni ime ( dohvaćeno novo ime iz forme) i spremi u bazu
     }
 
     /**
@@ -80,6 +80,6 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        //TODO obrisi fotografiju
     }
 }

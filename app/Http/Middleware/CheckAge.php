@@ -1,5 +1,5 @@
 <?php
-
+//  php artisan make:middleware CheckAge
 namespace App\Http\Middleware;
 
 use Closure;
