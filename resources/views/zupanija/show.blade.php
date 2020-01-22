@@ -11,11 +11,15 @@
 @endsection
 
 @section('content')
+<h1>{{ $z->naziv }}</h1>
+Id:{{ $z->id }}<br>
+
+<h2>Ispis svih mjesta županije {{ $z->naziv }}</h2>
 <ul>
-@foreach ($zup as $z)
+@foreach ($z->mjestos()->get() as $m)
 <li> 
-    <img src='..\{{resource_path()}}\map.png'>
-    <a href=" zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
+    <img src='map.png'>
+    <a href=""> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
 @endforeach
 </ul>
 <?php //print_r($zup);?>

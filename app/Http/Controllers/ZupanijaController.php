@@ -14,7 +14,8 @@ class ZupanijaController extends Controller
      */
     public function index()
     {
-        //
+       $zupanije=Zupanija::all();
+        return view('zupanija.index',['zup'=>$zupanije]);
     }
 
     /**
@@ -24,7 +25,7 @@ class ZupanijaController extends Controller
      */
     public function create()
     {
-        //
+        return view('zupanija.create');
     }
 
     /**
@@ -35,7 +36,9 @@ class ZupanijaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $z=new Zupanija();
+        $z->naziv=$request->naziv;
+        $z->save();
     }
 
     /**
@@ -44,9 +47,10 @@ class ZupanijaController extends Controller
      * @param  \App\Zupanija  $zupanija
      * @return \Illuminate\Http\Response
      */
-    public function show(Zupanija $zupanija)
+    public function show(Zupanija $zupanija) // dovoljno je prosljediti id i on iz njega napravi objekt
     {
-        //
+       // $zupanije=Zupanija::all();
+        return view('zupanija.show',['z'=>$zupanija]);
     }
 
     /**

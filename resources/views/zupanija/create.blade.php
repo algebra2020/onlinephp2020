@@ -11,13 +11,10 @@
 @endsection
 
 @section('content')
-<ul>
-@foreach ($zup as $z)
-<li> 
-    <img src='..\{{resource_path()}}\map.png'>
-    <a href=" zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
-@endforeach
-</ul>
-<?php //print_r($zup);?>
-    <p>This is my body content.</p>
+<h1>Unesi novu županiju</h1>
+<form action="/zupanijas" method="post">
+    @csrf
+    <input name="naziv" type="text" required="true"><br>
+    <input type="submit" name="unesi">
+</form>
 @endsection
