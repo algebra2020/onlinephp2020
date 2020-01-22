@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Zupanija extends Model
 {
-     public function mjestas()
+     public function mjestos()
     {
         return $this->hasMany('App\Mjesto');
     }

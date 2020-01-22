@@ -1,0 +1,40 @@
+php artisan tinker
+
+// Dohvati sve zupanije
+---------------------
+App\Zupanija::count();
+=> 21
+
+// dohvati randomnu zupaniju
+---------------------
+>>> App\Zupanija::all()->random(1)
+=> Illuminate\Database\Eloquent\Collection {#3075
+     all: [
+       App\Zupanija {#3145
+         id: 17,
+         naziv: "Connecticut",
+         created_at: "2020-01-20 19:59:51",
+         updated_at: "2020-01-20 19:59:51",
+       },
+     ],
+   }
+
+--------------------------
+//Dohvati randomni id od zupanije
+>>> App\Zupanija::all()->random(1)[0]->id;
+=> 5
+---------------------------
+
+// Dohvati sva mjesta iz zupanije koja ima id=4
+>>> $zup=App\Zupanija::find(4)->mjestos()->get();
+=> Illuminate\Database\Eloquent\Collection {#3103
+     all: [
+       App\Mjesto {#3104
+         id: 9,
+         pbr: 41207,
+         naziv: "East Itzel",
+         zupanija_id: 4,
+         created_at: "2020-01-22 18:01:08",
+         updated_at: "2020-01-22 18:01:08",
+       },
+----------------------
