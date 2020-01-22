@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/zupanijas/index', function () {
+    return view('zupanija.index',['zup'=>App\Zupanija::all()]);
+});
+Route::resource('zupanijas', 'ZupanijaController');
 Route::get('/', function () {
     return view('welcome');
 });
