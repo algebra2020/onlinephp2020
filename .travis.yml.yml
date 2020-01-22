@@ -1,11 +1,12 @@
+dist: trusty
 language: php
 php:
   - 7.2.9
 sudo: required
-dist: trusty
 
 addons:
    chrome: stable
+   mariadb: 10.4
 
 install:
    - cp .env.travis .env
