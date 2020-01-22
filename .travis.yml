@@ -1,7 +1,7 @@
 dist: trusty
 language: php
 php:
-  - 7.3.10
+  - 7.3.13
 sudo: required
 
 addons:
