@@ -13,8 +13,8 @@
 @section('content')
 <ul>
 @foreach ($zup as $z)
-<li> 
-    <img src='..\{{resource_path()}}\map.png'>
+<li style='list-style:none'>
+    <img src="{{asset('images/map.svg')}}" width="25px">
     <a href=" zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
 @endforeach
 </ul>
