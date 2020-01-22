@@ -1,5 +1,5 @@
 ## TODO
-https://travis-ci.com/algebra2020/onlinephp2020
+https://travis-ci.com/algebra2020/onlinephp2020 
 
 
 
@@ -15,7 +15,7 @@ https://travis-ci.com/algebra2020/onlinephp2020
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.com/algebra2020/onlinephp2020.svg?branch=master" alt="Build Status"></a>
 
 </p>
 
