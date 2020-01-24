@@ -6,8 +6,9 @@
 
 @section('sidebar')
     @parent
-
-    <p>This is appended to the master sidebar.</p>
+    <p><a href="/zupanijas/">Popis svih županija</a><br>
+        <a href="/mjestos/">Popis svih mjesta</a><br>
+    <a href="/mjestos/byzup">Popis svih mjesta</a><br></p>
 @endsection
 
 @section('content')
@@ -17,5 +18,12 @@ Id:{{ $m->id }}<br>
 <h2>Ispis detalja {{ $m->naziv }}</h2>
 
 
-    <p>This is my body content.</p>
+    <p><iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAWl7kwrpobWXdVJvkoZ1Z7nh3DcbUFtUs
+    &q=caffe,{{ $m->naziv }}" allowfullscreen>
+</iframe></p>
+    
 @endsection

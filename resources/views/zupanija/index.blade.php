@@ -18,7 +18,9 @@
 @foreach ($zup as $z)
 <li style='list-style:none'>
     <img src="{{asset('images/map.svg')}}" width="25px">
-    <a href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
+    <a href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a> &nbsp; 
+    <a href="/zupanijas/{{ $z->id }}/edit">
+        <button class="btn btn-outline-secondary btn-sm" data-title="Edit" data-toggle="modal" data-target="#edit">Edit</button></a></li>
 @endforeach
 </ul>
 <?php //print_r($zup);?>

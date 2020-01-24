@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/mjestos/byzup','MjestoController@indexbyzup');
+Route::resource('mjestos', 'MjestoController');
 Route::get('/zupanijas/index', function () {
     return view('zupanija.index',['zup'=>App\Zupanija::all()]);
 });

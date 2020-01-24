@@ -1,4 +1,5 @@
 <?php
+//TODO VALIDACIJE
 
 namespace App\Http\Controllers;
 
@@ -63,7 +64,7 @@ class ZupanijaController extends Controller
      */
     public function edit(Zupanija $zupanija)
     {
-        //
+        return view('zupanija.edit',['z'=>$zupanija]);
     }
 
     /**
@@ -75,7 +76,10 @@ class ZupanijaController extends Controller
      */
     public function update(Request $request, Zupanija $zupanija)
     {
-        //
+        //$z=new Zupanija();
+        $zupanija->naziv=$request->naziv;
+        $zupanija->save();
+        return redirect()->route('zupanijas.index');
     }
 
     /**

@@ -11,11 +11,12 @@
 @endsection
 
 @section('content')
-<h1>Unesi novu županiju</h1>
-<form action="/zupanijas" method="post">
+<h1>Promjeni ime županije {{$z->naziv}}</h1>
+<form action="/zupanijas/{{$z->id}}" method="post">
     @csrf
-    <label for="naziv">Unesi ime županije</label>
-    <input name="naziv" type="text" required="true"><br>
+    @method('PUT')
+    <label for="naziv">Unesi novi naziv županije</label>
+    <input name="naziv" type="text" required="true" value="{{$z->naziv}}"><br>
     <input type="submit" name="unesi">
 </form>
 @endsection

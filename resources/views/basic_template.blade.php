@@ -17,7 +17,7 @@ and open the template in the editor.
     </head>
     <body>
         @section('sidebar')
-            This is the master sidebar.
+        <a href="/">Home</a><br>
         @show
 
         <div class="container">

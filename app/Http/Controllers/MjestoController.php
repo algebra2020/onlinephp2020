@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mjesto;
+use App\Zupanija;
 use Illuminate\Http\Request;
 
 class MjestoController extends Controller
@@ -14,7 +15,16 @@ class MjestoController extends Controller
      */
     public function index()
     {
-        //
+        //$mjesta=Mjesto::all();
+        $mjesta=Mjesto::orderBy('naziv')->get();
+        return view('mjesto.index',['mjesta'=>$mjesta]);
+    }
+    // /mjestos/indexbyzup
+    public function indexbyzup()
+    {
+        //$mjesta=Mjesto::all();
+        $zup=Zupanija::orderBy('naziv')->get();
+        return view('mjesto.indexbyzup',['zup'=>$zup]);
     }
 
     /**
@@ -46,7 +56,7 @@ class MjestoController extends Controller
      */
     public function show(Mjesto $mjesto)
     {
-        //
+        return view('mjesto.show',['m'=>$mjesto]);
     }
 
     /**

@@ -7,7 +7,9 @@
 @section('sidebar')
     @parent
 
-    <p>This is appended to the master sidebar.</p>
+    <p><a href="/zupanijas/">Popis svih županija</a><br>
+        <a href="/mjestos/">Popis svih mjesta</a><br>
+    <a href="/mjestos/byzup">Popis svih mjesta</a><br></p>
 @endsection
 
 @section('content')
@@ -19,7 +21,7 @@ Id:{{ $z->id }}<br>
 @foreach ($z->mjestos()->get() as $m)
 <li> 
     <img src='map.png'>
-    <a href="/mjesto/{{ $m->id }}"> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
+    <a href="/mjestos/{{ $m->id }}"> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
 @endforeach
 </ul>
 <?php //print_r($zup);?>
