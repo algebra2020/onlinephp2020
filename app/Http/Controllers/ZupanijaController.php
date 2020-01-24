@@ -14,7 +14,9 @@ class ZupanijaController extends Controller
      */
     public function index()
     {
-       $zupanije=Zupanija::all();
+       //$zupanije=Zupanija::all();
+        //$zupanije=Zupanija::all()->sortBy('naziv'); // sortiranje nakon izvršenja DB::query
+        $zupanije=Zupanija::orderBy('naziv')->get(); // sortiranje na razini baze DB::query <--BRŽE
         return view('zupanija.index',['zup'=>$zupanije]);
     }
 

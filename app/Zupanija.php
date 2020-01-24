@@ -8,6 +8,6 @@ class Zupanija extends Model
 {
      public function mjestos()
     {
-        return $this->hasMany('App\Mjesto');
+        return $this->hasMany('App\Mjesto')->orderBy('naziv');;
     }
 }

@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Zupanija::class, function (Faker $faker) {
     return [
-        'naziv' => $faker->state,
+        'naziv' => $faker->unique()->state,
     ];
 });

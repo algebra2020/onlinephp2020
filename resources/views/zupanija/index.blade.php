@@ -2,20 +2,23 @@
 
 @extends('basic_template')
 
-@section('title', 'Page Title')
+@section('title', 'Županija popis')
 
 @section('sidebar')
     @parent
 
-    <p>This is appended to the master sidebar.</p>
+    <h1>Kompletan popis svih županija.</h1>
 @endsection
 
 @section('content')
 <ul>
+    <?php
+    //dd($zup);
+    ?>
 @foreach ($zup as $z)
 <li style='list-style:none'>
     <img src="{{asset('images/map.svg')}}" width="25px">
-    <a href=" zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
+    <a href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a></li>
 @endforeach
 </ul>
 <?php //print_r($zup);?>

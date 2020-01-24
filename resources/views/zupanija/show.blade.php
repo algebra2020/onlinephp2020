@@ -19,7 +19,7 @@ Id:{{ $z->id }}<br>
 @foreach ($z->mjestos()->get() as $m)
 <li> 
     <img src='map.png'>
-    <a href=""> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
+    <a href="/mjesto/{{ $m->id }}"> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
 @endforeach
 </ul>
 <?php //print_r($zup);?>
