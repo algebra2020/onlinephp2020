@@ -16,7 +16,7 @@ class CreateMjestosTable extends Migration
         Schema::create('mjestos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('pbr', false);
-            $table->char('naziv',50);
+            $table->char('naziv',50)->index();
             $table->bigInteger('zupanija_id');
             $table->timestamps();
         });
