@@ -10,4 +10,9 @@ class Zupanija extends Model
     {
         return $this->hasMany('App\Mjesto')->orderBy('naziv');;
     }
+    public function delete() {
+        // delete all related
+        $this->mjestos()->delete();
+        return parent::delete();
+    }
 }

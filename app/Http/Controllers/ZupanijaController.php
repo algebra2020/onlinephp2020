@@ -108,7 +108,7 @@ class ZupanijaController extends Controller {
     public function destroy(Zupanija $zupanija) {
 //TODO napiši obacvijest o brisanju
         $zupanija->delete();
-        Session::flash('message', 'Županija ' . $zupanija->naziv.' je obrisana!');
+        Session::flash('message-success', 'Županija ' . $zupanija->naziv.' je obrisana!');
         return redirect()->back();
     }
 
