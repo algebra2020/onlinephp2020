@@ -1,24 +1,26 @@
 <?php
+
 //TODO VALIDACIJE
 
 namespace App\Http\Controllers;
 
+use Validator;
+use Session;
 use App\Zupanija;
 use Illuminate\Http\Request;
 
-class ZupanijaController extends Controller
-{
+class ZupanijaController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-       //$zupanije=Zupanija::all();
+    public function index() {
+        //$zupanije=Zupanija::all();
         //$zupanije=Zupanija::all()->sortBy('naziv'); // sortiranje nakon izvršenja DB::query
-        $zupanije=Zupanija::orderBy('naziv')->get(); // sortiranje na razini baze DB::query <--BRŽE
-        return view('zupanija.index',['zup'=>$zupanije]);
+        $zupanije = Zupanija::orderBy('naziv')->get(); // sortiranje na razini baze DB::query <--BRŽE
+        return view('zupanija.index', ['zup' => $zupanije]);
     }
 
     /**
@@ -26,8 +28,7 @@ class ZupanijaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         return view('zupanija.create');
     }
 
@@ -37,11 +38,29 @@ class ZupanijaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $z=new Zupanija();
-        $z->naziv=$request->naziv;
-        $z->save();
+    public function store(Request $request) {
+        $z = new Zupanija();
+        $validator = Validator::make($request->all(), [
+                    'naziv' => 'required|string|unique:zupanijas|max:191',
+        ]);
+        if ($validator->fails()) {
+            Session::flash('error', 'Greška, molim ispravno popuniti polja!');
+
+            return redirect('/zupanijas/create/')
+                            ->withErrors($validator)
+                            ->withInput();
+        } else {
+            // store
+
+            $z->naziv = $request->naziv;
+            $z->save();
+
+            // redirect
+            Session::flash('message', 'Uspješno dodana županija ' . $request->naziv);
+
+            return redirect()->route('zupanijas.index');
+        }
+        //TODO fali validacija
     }
 
     /**
@@ -50,10 +69,9 @@ class ZupanijaController extends Controller
      * @param  \App\Zupanija  $zupanija
      * @return \Illuminate\Http\Response
      */
-    public function show(Zupanija $zupanija) // dovoljno je prosljediti id i on iz njega napravi objekt
-    {
-       // $zupanije=Zupanija::all();
-        return view('zupanija.show',['z'=>$zupanija]);
+    public function show(Zupanija $zupanija) { // dovoljno je prosljediti id i on iz njega napravi objekt
+        // $zupanije=Zupanija::all();
+        return view('zupanija.show', ['z' => $zupanija]);
     }
 
     /**
@@ -62,9 +80,8 @@ class ZupanijaController extends Controller
      * @param  \App\Zupanija  $zupanija
      * @return \Illuminate\Http\Response
      */
-    public function edit(Zupanija $zupanija)
-    {
-        return view('zupanija.edit',['z'=>$zupanija]);
+    public function edit(Zupanija $zupanija) {
+        return view('zupanija.edit', ['z' => $zupanija]);
     }
 
     /**
@@ -74,10 +91,10 @@ class ZupanijaController extends Controller
      * @param  \App\Zupanija  $zupanija
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Zupanija $zupanija)
-    {
+    public function update(Request $request, Zupanija $zupanija) {
+        //TODO fali validacija
         //$z=new Zupanija();
-        $zupanija->naziv=$request->naziv;
+        $zupanija->naziv = $request->naziv;
         $zupanija->save();
         return redirect()->route('zupanijas.index');
     }
@@ -88,8 +105,10 @@ class ZupanijaController extends Controller
      * @param  \App\Zupanija  $zupanija
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Zupanija $zupanija)
-    {
-        //
+    public function destroy(Zupanija $zupanija) {
+//TODO napiši obacvijest o brisanju
+        $zupanija->delete();
+        return redirect()->back();
     }
+
 }

@@ -19,7 +19,17 @@ and open the template in the editor.
         @section('sidebar')
         <a href="/">Home</a><br>
         @show
+        @if (Session::has('message'))
+        <div class="alert alert-info">{{ Session::get('message') }}</div>
+        @endif
 
+        @if(!empty($errors->first()))
+
+        <div class="alert alert-danger">
+            <span>{{ $errors->first() }}</span>
+        </div>
+
+        @endif
         <div class="container">
             @yield('content')
         </div>

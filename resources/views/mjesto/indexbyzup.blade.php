@@ -18,7 +18,7 @@
 
 @foreach ($zup as $z)
 <li style='list-style:square'>
-    <a href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a>
+    <a style="font-weight: bold" href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a>
     
     <ul>@foreach ($z->mjestos()->get() as $m)
         <li><a href="/mjestos/{{ $m->id }}"> {{ $m->naziv }} </a></li>

@@ -22,6 +22,10 @@ Id:{{ $m->id }}<br>
   width="600"
   height="450"
   frameborder="0" style="border:0"
+  <!-- 
+  Obavezno resetirati cache u slučaju promjene .env
+  php artisan config:clear 
+  -->
   src="https://www.google.com/maps/embed/v1/place?key={{env('GOOGLE_MAPS_API', false)}}
     &q=caffe,{{ $m->naziv }}" allowfullscreen>
 </iframe></p>

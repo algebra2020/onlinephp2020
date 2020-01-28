@@ -20,6 +20,11 @@
     <img src="{{asset('images/map.svg')}}" width="25px">
     <a href="/zupanijas/{{ $z->id }}"> {{ $z->naziv }} </a> &nbsp; 
     <a href="/zupanijas/{{ $z->id }}/edit">
+        <form action="/zupanijas/{{ $z->id }}" method="POST" style="display: inline">
+            @csrf
+            @method('DELETE')
+            <input type="submit" name="delete" value="Delete" class="btn btn-outline-secondary btn-sm" data-title="Delete" data-toggle="modal" data-target="#delete">
+        </form>
         <button class="btn btn-outline-secondary btn-sm" data-title="Edit" data-toggle="modal" data-target="#edit">Edit</button></a></li>
 @endforeach
 </ul>
