@@ -41,7 +41,7 @@ class ZupanijaController extends Controller {
     public function store(Request $request) {
         $z = new Zupanija();
         $validator = Validator::make($request->all(), [
-                    'naziv' => 'required|string|unique:zupanijas|max:191',
+                    'naziv' => 'required|regex:/^[a-zA-Z]+$/u|unique:zupanijas|max:191',
         ]);
         if ($validator->fails()) {
             Session::flash('error', 'Greška, molim ispravno popuniti polja!');
@@ -55,12 +55,11 @@ class ZupanijaController extends Controller {
             $z->naziv = $request->naziv;
             $z->save();
 
-            // redirect
+            // objavi poruku
             Session::flash('message', 'Uspješno dodana županija ' . $request->naziv);
-
+            // redirect
             return redirect()->route('zupanijas.index');
         }
-        //TODO fali validacija
     }
 
     /**
@@ -94,6 +93,31 @@ class ZupanijaController extends Controller {
     public function update(Request $request, Zupanija $zupanija) {
         //TODO fali validacija
         //$z=new Zupanija();
+        $validator = Validator::make($request->all(), [
+                    'naziv' => 'required|alpha|unique:zupanijas|max:191',
+        ]);
+        if ($validator->fails()) {
+            Session::flash('error', 'Greška, molim ispravno popuniti polja!');
+
+            return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+        } else {
+            // store
+
+            $zupanija->naziv = $request->naziv;
+            $zupanija->save();
+
+            // objavi poruku
+            Session::flash('message', 'Uspješno izmjenjena županija ' . $request->naziv);
+            // redirect
+            return redirect()->route('zupanijas.index');
+        }
+
+
+
+
+
         $zupanija->naziv = $request->naziv;
         $zupanija->save();
         return redirect()->route('zupanijas.index');
@@ -106,9 +130,8 @@ class ZupanijaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Zupanija $zupanija) {
-//TODO napiši obacvijest o brisanju
         $zupanija->delete();
-        Session::flash('message-success', 'Županija ' . $zupanija->naziv.' je obrisana!');
+        Session::flash('message-success', 'Županija ' . $zupanija->naziv . ' je obrisana!');
         return redirect()->back();
     }
 

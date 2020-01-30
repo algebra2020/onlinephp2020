@@ -9,6 +9,13 @@
     <p><a href="/zupanijas/">Popis svih županija</a><br>
         <a href="/mjestos/">Popis svih mjesta</a><br>
     <a href="/mjestos/byzup">Popis svih mjesta</a><br></p>
+    <p><ul class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/zupanijas/">Sve županije</a></li>
+  <li><a href="/zupanijas/{{ $m->zupanija()->first()->id }}">{{ $m->zupanija()->first()->naziv }}</a></li>
+  <li><a href="/mjestos/{{ $m->id }}">{{ $m->naziv }}</a></li>
+  <li>{{ $m->naziv }}</li>
+</ul></p>
 @endsection
 
 @section('content')
