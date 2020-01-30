@@ -1,4 +1,14 @@
 /* Style the list */
+input.right,select.right{
+    float: right;
+    width: 300px;
+}
+div.forma{
+    max-width:500px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
