@@ -16,14 +16,14 @@
 <h1>{{ $z->naziv }}</h1>
 Id:{{ $z->id }}<br>
 
-<h2>Ispis svih mjesta županije {{ $z->naziv }}</h2>
-<ul>
+<h2>Ispis svih mjesta županije {{ $z->naziv }} ({{$z->mjestos()->count()}})</h2>
+<ol>
 @foreach ($z->mjestos()->get() as $m)
 <li> 
-    <img src='map.png'>
+    <i class="fas fa-map"></i>
     <a href="/mjestos/{{ $m->id }}"> {{ $m->naziv }} <span class="details">({{ $m->pbr }})</span></a></li>
 @endforeach
-</ul>
+</ol>
 <?php //print_r($zup);?>
     <p>This is my body content.</p>
 @endsection
