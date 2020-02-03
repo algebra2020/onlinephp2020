@@ -15,23 +15,20 @@ class StudentTest extends TestCase
      */
     public function testImaLiStudenata()
     {
-        /*
-$s= new Student;
-$s::all()->find(1382)->mjestostanovanja()->get()
-App\Mjesto {#3750
-         id: 112,
-         pbr: 40393,
-         naziv: "West Oma",
-         zupanija_id: 3,
-         created_at: "2020-02-03 18:22:28",
-         updated_at: "2020-02-03 18:22:28",
-       },
-         */
         $s= new Student();
-        //$dsd=$s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv;
-        $this->assertTrue(true);
-       // $mjestoStanovanja=$s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv;
+        
+        //neka ima više od dva studenta
         $this->assertGreaterThan(2, $s::all()->count());
-        //$this->assertNotEmpty($mjestoStanovanja);
+        
+        // neka naziv mjesta stanovanja != null
+        $this->assertNotEmpty($s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv);
+        
+        //provjeri jesu li detalji studenta ispravni
+        $this->assertEquals("Vlatka",   $s::find(1382)->imestud);
+        $this->assertEquals("Relota",   $s::find(1382)->prezstud);
+        $this->assertEquals("1382",     $s::find(1382)->mbrstud,);
+        $this->assertEquals("vlatka.relota@algebra.hr", $s::find(1382)->email);
+        $this->assertEquals("1985-06-11 00:00:00",      $s::find(1382)->datrodstud);
+        $this->assertEquals("1106985330115",           $s::find(1382)->jmbgstud);
     }
 }
