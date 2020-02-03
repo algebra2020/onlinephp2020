@@ -3,7 +3,8 @@
 namespace Tests\Unit;
 
 use App\Student;
-use PHPUnit\Framework\TestCase;
+//use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class StudentTest extends TestCase
 {
@@ -26,11 +27,11 @@ App\Mjesto {#3750
          updated_at: "2020-02-03 18:22:28",
        },
          */
-        $s= \App\Student;
-        $dsd=$s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv;
+        $s= new Student();
+        //$dsd=$s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv;
         $this->assertTrue(true);
        // $mjestoStanovanja=$s::all()->find(1382)->mjestostanovanja()->get()->first()->naziv;
-        //$this->assertGreaterThan(2, $s::all()->count());
+        $this->assertGreaterThan(2, $s::all()->count());
         //$this->assertNotEmpty($mjestoStanovanja);
     }
 }
