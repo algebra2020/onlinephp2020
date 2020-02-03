@@ -10,4 +10,8 @@ class Mjesto extends Model
     {
         return $this->belongsTo('App\Zupanija');
     }
+    public function students()
+    {
+        return $this->hasMany('App\Student')->orderBy('prezstud');
+    }
 }
