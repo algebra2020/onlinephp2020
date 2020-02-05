@@ -1,5 +1,65 @@
 php artisan tinker
+--------------
+> $s=Student::all()->random(1)->first()
+=> App\Student {#3577
+     mbrstud: 1325,
+     imestud: "Martina",
+     prezstud: "Simon",
+     pbrrod: 43217,
+     pbrstan: 44631,
+     datrodstud: "1984-02-03 00:00:00",
+     jmbgstud: "0302984383304",
+     slikastud: 0,
+     email: "martina.simon@algebra.hr",
+     created_at: null,
+     updated_at: null,
+   }
+>>> $zupid=->mjestostanovanja()->get()->first()->zupanija_id
+PHP Parse error: Syntax error, unexpected T_OBJECT_OPERATOR on line 1
+>>> $zupid=$s->mjestostanovanja()->get()->first()->zupanija_id
+=> 2
+>>> $mjestoid=$s->mjestostanovanja()->get()->first()->id
+=> 5
+>>> $studid=$s->mbrstud;
+=> 1325
+>>> $stud_prezime=$s->prezstud
+=> "Simon"
+>>> $zup=Zupanija::find($zupid)->mjestos()->find($mjestoid)->students_stan()->get()->find($studid)->prezstud
+=> "Simon"
+>>>
 
+--------------
+
+$ php artisan tinker
+Psy Shell v0.9.12 (PHP 7.3.10 — cli) by Justin Hileman
+>>> $s= new Student()
+[!] Aliasing 'Student' to 'App\Student' for this Tinker session.
+=> App\Student {#3114}
+>>> $brzup=$s::all()->find(1382)->mjestostanovanja()->get()->first()->zupanija_id
+=> 12
+>>> $zup=Zupanija::find($brzup)->mjestos()->find(169)->students_stan()->get()
+[!] Aliasing 'Zupanija' to 'App\Zupanija' for this Tinker session.
+=> Illuminate\Database\Eloquent\Collection {#3735
+     all: [
+       App\Student {#3745
+         mbrstud: 1382,
+         imestud: "Vlatka",
+         prezstud: "Relota",
+         pbrrod: 43217,
+         pbrstan: 59022,
+         datrodstud: "1985-06-11 00:00:00",
+         jmbgstud: "1106985330115",
+         slikastud: 0,
+         email: "vlatka.relota@algebra.hr",
+         created_at: null,
+         updated_at: null,
+       },
+     ],
+   }
+>>>
+
+
+-------------
 DOHVATI STUDENTE
 $s= new Student;
 $s::all()->find(1382)->mjestostanovanja()->get()
