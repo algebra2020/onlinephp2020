@@ -33,3 +33,4 @@ script:
   #- vendor/bin/phpunit --debug --bootstrap vendor/autoload.php tests/
   - vendor/bin/phpunit --debug --bootstrap vendor/autoload.php --configuration ./phpunit.xml
   - php artisan dusk:chrome-driver 74
+  - php artisan dusk
