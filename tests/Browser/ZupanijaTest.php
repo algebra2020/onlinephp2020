@@ -17,6 +17,7 @@ class ZupanijaTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/zupanijas/create')
+                    ->assertUrlIs('/zupanijas/create')
                     ->assertSee('Unesi novu županiju')
                     ->type('naziv', 'NAJNAJNOVIJaaZupanija')
                     ->press('unesi')
