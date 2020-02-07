@@ -48,7 +48,7 @@
             <form action="/zupanijas/{{ $z->id }}" method="POST" style="display: inline">
                 @csrf
                 @method('DELETE')
-                <button type="submit" name="delete" class="btn btn-outline-secondary btn-sm" data-title="Delete" data-toggle="modal" data-target="#delete">
+                <button type="submit" id="delete_zup_{{ $z->id }}" name="delete_zup_{{ $z->id }}" class="btn btn-outline-secondary btn-sm" data-title="Delete" data-toggle="modal" data-target="#delete">
                     <i class="fa fa-trash"></i> Delete
                 </button>
             </form>
