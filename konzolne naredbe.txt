@@ -1,7 +1,6 @@
 TINKER
 
 
-
 -----------------------
 export PATH=${PATH}:/c/xampp/mysql/bin
 mysql
