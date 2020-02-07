@@ -27,6 +27,9 @@ class ZupanijaTest extends DuskTestCase
             
         });
     }
+     /**
+     * @depends testZupanijaCreate
+     */
     public function testZupanijaDelete()
     {
         $this->browse(function (Browser $browser) {
