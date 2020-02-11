@@ -10,4 +10,12 @@ class Nastavnik extends Model
     {
         return $this->belongsTo('App\Orgjed');
     }
+    public function mjesto()
+    {
+        return $this->belongsTo('App\Mjesto');
+    }
+     public function ispiti()
+    {
+        return $this->hasMany('App\Ispit');
+    }   
 }

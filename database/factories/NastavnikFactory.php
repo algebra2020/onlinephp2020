@@ -11,6 +11,7 @@ $factory->define(Nastavnik::class, function (Faker $faker) {
         'ime' => $faker->firstName,
         'prezime' => $faker->lastName,
         'pbrstan' => App\Mjesto::all()->random(1)->first()->pbr,
+        'orgjed_id'=>1, //TODO spoji sa pravom orgjed  -> App\Orgjed::all()->random(1)->first()->id,
         'koef'=> $faker->numberBetween(100, 999)/100,
     ];
 });

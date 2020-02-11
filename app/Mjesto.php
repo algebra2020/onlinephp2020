@@ -14,6 +14,10 @@ class Mjesto extends Model
     {
         return $this->hasMany('App\Student','pbr','pbrrod')->orderBy('prezstud');
     }
+    public function nastavniks()
+    {
+        return $this->hasMany('App\Nastavnik','pbr','pbrstan')->orderBy('prezime');
+    }
     public function students_stan()
     {
         return $this->hasMany('App\Student','pbrstan','pbr')->orderBy('prezstud');
