@@ -17,6 +17,10 @@ class StudentTest extends TestCase
      */
     public function testImaLiStudenata()
     {
+        $this->assertTrue(class_exists ('App\Student'),"Ne postoji model student ");
+        $this->assertTrue(method_exists('App\Student','mjestorodjenja'),"Ne postoji metoda! ");
+        $this->assertFalse(method_exists('App\Student','method_xyz'));
+        
         $s= new Student();
         
         //neka ima više od dva studenta

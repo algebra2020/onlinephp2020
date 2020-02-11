@@ -24,14 +24,14 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertUrlIs('/');
+                    ->assertUrlIs('http://localhost:8000/');
         });
     }
         public function testHomepagePath()
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertPathIs('/');;
+                    ->assertPathIs('http://localhost:8000/');;
         });
     }    
 }
