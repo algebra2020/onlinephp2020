@@ -27,4 +27,11 @@ class ExampleTest extends DuskTestCase
                     ->assertUrlIs('/');
         });
     }
+        public function testHomepagePath()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visit('/')
+                    ->assertPathIs('/');;
+        });
+    }    
 }
