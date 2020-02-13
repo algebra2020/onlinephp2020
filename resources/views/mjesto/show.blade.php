@@ -1,6 +1,6 @@
 <!-- Stored in resources/views/mjesto/show.blade.php -->
 
-@extends('basic_template')
+@extends('adminlte::page')
 
 @section('title', 'Mjesto Detalji') <!-- //TODO Postavi blade mjesto->naziv -->
 

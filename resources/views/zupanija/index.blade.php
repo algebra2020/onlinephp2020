@@ -1,6 +1,6 @@
 <!-- Stored in resources/views/zupanija/index.blade.php -->
 
-@extends('basic_template')
+@extends('adminlte::page')
 
 @section('title', 'Županija popis')
 
