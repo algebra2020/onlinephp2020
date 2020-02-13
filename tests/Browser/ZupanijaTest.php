@@ -33,7 +33,7 @@ class ZupanijaTest extends DuskTestCase
      /**
      * @depends testZupanijaCreate
      */
-    public function testZupanijaDelete()
+    public function SKIPtestZupanijaDelete()
     {
         $this->browse(function (Browser $browser) {
             
