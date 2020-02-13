@@ -83,6 +83,8 @@
                 <div class="title m-b-md">
                     Algebra Online PHP 2020
                 </div>
+                <div class="alert-info">U: 123@123.com<br>
+                P: 12345678</div>
 <!-- //TODO  dodati linkove na glavnu stranicu -->
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
