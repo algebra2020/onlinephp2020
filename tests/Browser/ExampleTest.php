@@ -1,18 +1,12 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Browser;
 
-use PHPUnit\Framework\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Laravel\Dusk\Browser;
+use Tests\DuskTestCase;
 
-class ExampleTest extends TestCase
+class ExampleTest extends DuskTestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
-    {
-        $this->assertTrue(true);
-    }
+  
 }

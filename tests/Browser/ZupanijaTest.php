@@ -21,6 +21,7 @@ class ZupanijaTest extends DuskTestCase
                     ->assertSee('Unesi novu županiju')
                     ->type('naziv', 'NAJNAJNOVIJaaZupanija')
                     ->press('unesi')
+                    ->assertDontSee('već zauzet')  // postoji već županija s tim imenom?
                     //->assertSee('Uspješno dodana županija')
                    // ->assertSee('NAJNAJNOVIJaaZupanija');
                     ;
@@ -43,7 +44,7 @@ class ZupanijaTest extends DuskTestCase
                     ->assertSee('Kompletan popis svih županija')
                     ->press('#delete_zup_'.$zup_id)
                     ->assertDontSee('error')
-                    ->assertSee('Županija NAJNAJNOVIJaaZupanija je obrisana!');
+                    ->assertSee('NAJNAJNOVIJaaZupanija je obrisana!');
             $browser->pause(1500)
                 ->screenshot('deleted-zupanija-screenshot');
             

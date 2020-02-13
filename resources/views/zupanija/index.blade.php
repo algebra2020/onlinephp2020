@@ -9,9 +9,13 @@
         <span class="badge badge-secondary">{{$zup->count()}}</span>
         </h1>
 @stop
+@component('alerts')
+    <strong>Whoops!</strong> Something went wrong!
+@endcomponent
 
 @section('sidebar')
 @parent
+
 <a style="display: inline" class="btn btn-xs btn-success" href="{{ route("zupanijas.create") }}">
     <i class="fa fa-plus" aria-hidden="true"></i> Unesi novu županiju</a>
 @endsection

@@ -15,6 +15,6 @@ class ZupanijaTest extends TestCase
     {
          $broj_zupanija= \App\Zupanija::all()->count();
 //=> 21
-        $this->assertEquals(21, $broj_zupanija,'Broj zupanija MORA biti 21');
+        $this->assertGreaterThanOrEqual(21, $broj_zupanija,'Broj zupanija MORA biti 21 ili veći');
     }
 }
