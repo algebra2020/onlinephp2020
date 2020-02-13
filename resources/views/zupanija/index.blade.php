@@ -4,13 +4,18 @@
 
 @section('title', 'Županija popis')
 
+@section('content_header')
+    <h1 class="m-0 text-dark">Kompletan popis svih županija 
+        <span class="badge badge-secondary">{{$zup->count()}}</span>
+        </h1>
+@stop
+
 @section('sidebar')
 @parent
-
-<h1>Kompletan popis svih županija.</h1>
 <a style="display: inline" class="btn btn-xs btn-success" href="{{ route("zupanijas.create") }}">
     <i class="fa fa-plus" aria-hidden="true"></i> Unesi novu županiju</a>
 @endsection
+
 
 @section('content')
 <div id="DeleteModal" class="modal fade text-danger" role="dialog">
